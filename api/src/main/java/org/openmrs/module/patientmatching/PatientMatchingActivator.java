@@ -226,8 +226,7 @@ public class PatientMatchingActivator extends StaticMethodMatcherPointcutAdvisor
                 try {
                     Context.getSchedulerService().shutdownTask(td);
                 } catch (SchedulerException e) {
-                    // TODO Auto-generated catch block
-                    e.printStackTrace();
+                    log.error("Failed to stop task " + td.getTaskClass() + " due to Scheduler exception");
                 }
             }
         }
